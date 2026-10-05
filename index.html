@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+
+    <script type="text/javascript">
+        function comparar(n, op) {
+            var a = document.getElementById("a" + n).value;
+            var b = document.getElementById("b" + n).value;
+
+            // se os dois forem numeros, converte (senao "10" > "6" da errado)
+            if (!isNaN(a) && !isNaN(b)) {
+                a = Number(a);
+                b = Number(b);
+            }
+
+            var r;
+            if (op == "==") r = a == b;
+            else if (op == "!=") r = a != b;
+            else if (op == ">") r = a > b;
+            else if (op == ">=") r = a >= b;
+            else if (op == "<") r = a < b;
+            else if (op == "<=") r = a <= b;
+
+            alert(r ? "VERDADEIRO" : "FALSO");
+        }
+    </script>
+</head>
+<body>
+    <input id="a1" type="text"> == <input id="b1" type="text">
+    <button onclick="comparar(1, '==')">Comparar</button><br><br>
+
+    <input id="a2" type="text"> != <input id="b2" type="text">
+    <button onclick="comparar(2, '!=')">Comparar</button><br><br>
+
+    <input id="a3" type="text"> &gt; <input id="b3" type="text">
+    <button onclick="comparar(3, '>')">Comparar</button><br><br>
+
+    <input id="a4" type="text"> &gt;= <input id="b4" type="text">
+    <button onclick="comparar(4, '>=')">Comparar</button><br><br>
+
+    <input id="a5" type="text"> &lt; <input id="b5" type="text">
+    <button onclick="comparar(5, '<')">Comparar</button><br><br>
+
+    <input id="a6" type="text"> &lt;= <input id="b6" type="text">
+    <button onclick="comparar(6, '<=')">Comparar</button>
+</body>
+</html>
